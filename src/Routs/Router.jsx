@@ -5,6 +5,7 @@ import Plants from "../Pages/Plants";
 import MyProfile from "./MyProfile";
 import AuthLayout from "../MianLayout/AuthLayout";
 import Login from "../Pages/Login";
+import PlantDetails from "../Pages/PlantDetails";
 
 export const router = createBrowserRouter([
   {
@@ -18,7 +19,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "plants",
+        loader: () => fetch("/plantsData.json"),
         element: <Plants></Plants>,
+      },
+      {
+        path: "PlantDetails/:id",
+        loader: () => fetch("/plantsData.json"),
+        element: <PlantDetails></PlantDetails>,
       },
       {
         path: "profile",
