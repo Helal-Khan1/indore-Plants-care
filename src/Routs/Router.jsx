@@ -6,30 +6,58 @@ import MyProfile from "./MyProfile";
 import AuthLayout from "../MianLayout/AuthLayout";
 import Login from "../Pages/Login";
 import PlantDetails from "../Pages/PlantDetails";
+import Rgister from "../Pages/Rgister";
+import PrivetRouter from "../PrivetRouter/PrivetRouter";
+import UpdeteProfile from "../Pages/UpdeteProfile";
+import Loeding from "../component/Loeding";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
+    hydrateFallbackElement: <Loeding></Loeding>,
     children: [
       {
         index: true,
+        hydrateFallbackElement: <Loeding></Loeding>,
         loader: () => fetch("/plantsData.json"),
         element: <Home></Home>,
       },
       {
         path: "plants",
+        hydrateFallbackElement: <Loeding></Loeding>,
         loader: () => fetch("/plantsData.json"),
-        element: <Plants></Plants>,
+        element: (
+          <PrivetRouter>
+            <Plants></Plants>
+          </PrivetRouter>
+        ),
       },
       {
         path: "PlantDetails/:id",
+        hydrateFallbackElement: <Loeding></Loeding>,
         loader: () => fetch("/plantsData.json"),
-        element: <PlantDetails></PlantDetails>,
+        element: (
+          <PrivetRouter>
+            <PlantDetails></PlantDetails>
+          </PrivetRouter>
+        ),
       },
       {
         path: "profile",
-        element: <MyProfile></MyProfile>,
+        element: (
+          <PrivetRouter>
+            <MyProfile></MyProfile>
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "updetProfile",
+        element: (
+          <PrivetRouter>
+            <UpdeteProfile></UpdeteProfile>
+          </PrivetRouter>
+        ),
       },
     ],
   },
@@ -43,7 +71,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "register",
-        element: <Login></Login>,
+        element: <Rgister></Rgister>,
       },
     ],
   },

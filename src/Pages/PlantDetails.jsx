@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
 import { toast, ToastContainer } from "react-toastify";
 
 const PlantDetails = () => {
+  const namRef = useRef();
+  const emailRef = useRef();
   const submiteHandaler = (event) => {
     event.preventDefault();
-    toast(" hi Ima helal");
+    namRef.current.value = "";
+    emailRef.current.value = "";
+
+    toast(" Submit succussfull");
   };
   const [plant, setPlant] = useState([]);
   const { id } = useParams();
@@ -15,20 +20,20 @@ const PlantDetails = () => {
     setPlant(filterDAta);
   }, [id, data]);
   return (
-    <div className=" mt-20 container mx-auto flex  items-center  justify-center">
+    <div className=" ms:px-20 mt-20 container mx-auto flex  items-center  justify-center">
       <div>
-        <div className="w-[700px]  border-green-500 shadow-sm rounded-sm border-2 p-4">
+        <div className=" sm:w-[700px]  border-green-500 shadow-sm rounded-sm border-2 p-4">
           <div>
             <img
               src={plant.image}
-              className="w-full object-cover rounded-2xl h-[300px]"
+              className="w-full object-cover rounded-2xl sm:h-[300px]"
               alt=""
             />
             <h1 className="font-bold">
               Name: <span className=" font-bold">{plant.plantName}</span>
             </h1>
             <p className="">
-              <span className="text-1xl font-bold">Description:</span>{" "}
+              <span className="text-1xl font-bold ">Description:</span>{" "}
               {plant.description}
             </p>
             <div className=" border-1 border-green-500 shadow-2xl mt-4"></div>
@@ -51,24 +56,29 @@ const PlantDetails = () => {
             <h1 className=" font-bold text-5xl  text-center bebas-regular">
               Book Consultation
             </h1>
-            <div className="border-2 border-green-600 mt-5 rounded-sm shadow-2xl mb-5 hover:bg-green-400 w-[400px] ">
+            <div className="border-2 border-green-600 mt-5 px-4 rounded-sm shadow-2xl mb-5 hover:bg-green-400 sm:w-[400px]  ">
               <form onSubmit={submiteHandaler} className="p-5 space-y-3">
                 <label htmlFor="Name">Name</label>
                 <input
                   type="text"
                   required
+                  ref={namRef}
                   placeholder="Enter-your Name"
                   className="w-full  bg-green-200 p-1  focus:outline-none focus:ring-2 focus:ring-green-600 rounded-sm placeholder:text-black/30"
                 />
                 <label htmlFor="Name">Email</label>
                 <input
+                  ref={emailRef}
                   type="email"
                   placeholder="Enter-your Email"
                   required
                   className="w-full  bg-green-200 p-1 focus:outline-none focus:ring-2 focus:ring-green-600  foucs: outline-none rounded-sm placeholder:text-black/30"
                 />
 
-                <button className="bg-green-500 w-full p-1 text-white font-bold hover:bg-green-600  rounded-sm ">
+                <button
+                  type="submit"
+                  className="bg-green-500 w-full p-1 text-white font-bold hover:bg-green-600  rounded-sm "
+                >
                   Book Now
                 </button>
               </form>

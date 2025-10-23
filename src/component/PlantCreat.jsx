@@ -25,14 +25,14 @@ const PlantCreat = () => {
           Meet Our Green Experts
         </h1>
 
-        <div className="grid md:grid-cols-3 mb-20 ">
-          <div className=" border-green-600 rounded-2xl  shadow-2xl  w-[400px] p-2 mt-20 border-2   gap-5">
+        <div className="grid md:grid-cols-3 mb-20 px-2 ">
+          <div className=" border-green-600 rounded-2xl  shadow-2xl  sm:w-[400px] p-2 mt-20 border-2   gap-5">
             <div className="">
               <figure className="h-48 overflow-hidden">
                 <img
                   src="https://i.ibb.co.com/HT938J7T/BM-Hilton-Carter-Portraits-6.jpg"
                   alt=""
-                  className=" w-full object-cover"
+                  className=" sm:w-full object-cover"
                 />
               </figure>
               <h1 className="  font-bold">Name: Hilton Carter</h1>
@@ -53,7 +53,7 @@ const PlantCreat = () => {
               amount of light, water, fertilizer, and repotting when needed
             </p>
           </div>
-          <div className=" w-[400px] border-green-600 rounded-2xl  shadow-2xl  p-2 mt-20 border-2 gap-5">
+          <div className=" sm:w-[400px] border-green-600 rounded-2xl  shadow-2xl px-5 sm:p-2 mt-20 border-2 gap-5">
             <div className="">
               <figure className=" h-48 overflow-hidden ">
                 <img
@@ -80,7 +80,7 @@ const PlantCreat = () => {
               to their home conditions.
             </p>
           </div>
-          <div className=" border-green-600 rounded-2xl  shadow-2xl  w-[400px] p-2 mt-20 border-2 gap-5">
+          <div className=" border-green-600 rounded-2xl  shadow-2xl p-4  sm:p-2 mt-20 border-2 gap-5">
             <div className="">
               <figure className=" h-48 overflow-hidden ">
                 <img

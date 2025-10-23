@@ -1,7 +1,16 @@
-import React from "react";
+import React, { use } from "react";
 import { NavLink } from "react-router";
+import { AuthContex } from "../Provider/AuthContex";
 
 const Navber = () => {
+  const { loding, user, singOut, setLoding } = use(AuthContex);
+  console.log(user);
+
+  const sineouthandalar = () => {
+    setLoding(true);
+    singOut();
+  };
+  console.log(loding);
   const links = (
     <>
       <li>
@@ -50,7 +59,15 @@ const Navber = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          {user ? (
+            <button onClick={sineouthandalar} className="btn">
+              log out
+            </button>
+          ) : (
+            <NavLink to={"/login"}>
+              <button className="btn">Login</button>
+            </NavLink>
+          )}
         </div>
       </div>
     </div>

@@ -7,10 +7,10 @@ const Plants = () => {
 
   return (
     <div className="mb-14">
-      <div className="grid w-[1140px]   sm:grid-cols-3 pl-40 mt-12 space-y-2.5 ">
+      <div className="grid sm:w-[1140px]   sm:grid-cols-3 sm:pl-40 mt-12 space-y-2.5 ">
         {data.map((plant) => (
-          <div className="border-2 border-green-500 hover:bg-green-400 hover:scale-105  space-y-2.transition  ease-in-out shadow-2xl rounded-sm w-[300px] h-auto p-4 ">
-            <figure className="h-48 overflow-hidden">
+          <div className="border-2 border-green-500 hover:bg-green-400 hover:scale-105  space-y-2.transition  ease-in-out shadow-2xl rounded-sm sm:w-[300px] h-auto p-4 ">
+            <figure className="sm:h-48 overflow-hidden">
               <img
                 src={plant.image}
                 alt=""
