@@ -15,15 +15,17 @@ const UpdeteProfile = () => {
 
     updeteUser({ displayName: name, photoURL: photo })
       .then(() => {
+        setUser({ ...auth.currentUser, displayName: name, photoURL: photo });
+        toast("Profile updated successfully!");
+        navigate("/profile");
         return auth.currentUser.reload();
       })
       .then(() => {
         setUser(auth.currentUser);
-        toast("Profile updated successfully!");
-        navigate("/profile");
       })
+
       .catch((err) => {
-        toast(err.message);
+        // console.log(err.message);
       });
   };
 

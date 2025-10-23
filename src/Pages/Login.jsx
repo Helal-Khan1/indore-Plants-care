@@ -14,7 +14,7 @@ const Login = () => {
 
   const location = useLocation();
   const Navigation = useNavigate();
-  console.log(location);
+  // console.log(location);
 
   const signgooglehandalar = () => {
     SingWithGoogle()
@@ -45,19 +45,19 @@ const Login = () => {
     event.preventDefault();
     const emial = event.target.email.value;
     const password = event.target.password.value;
-    console.log({ emial, password });
+    // console.log({ emial, password });
     if (password.length < 6) {
       toast("must be at least 6 character");
       return;
     }
     singIn(emial, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         toast("login sucssfull");
         Navigation(`${location.state ? location.state : "/"}`);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
 
         if (err.code == "auth/invalid-credential") {
           toast("Your email is not found try agein");

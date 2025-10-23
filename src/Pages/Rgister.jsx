@@ -18,7 +18,7 @@ const Rgister = () => {
         Navigation(`${location.state ? location.state : "/"}`);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         toast(err.message);
       });
   };
@@ -44,7 +44,7 @@ const Rgister = () => {
     } else {
       // toast("");
     }
-    console.log({ emial, password, name, photo });
+    // console.log({ emial, password, name, photo });
     // event.target.reset();
     createUser(emial, password)
       .then((result) => {
@@ -57,7 +57,7 @@ const Rgister = () => {
             Navigation(`${location.state ? location.state : "/"}`);
           })
           .catch((err) => {
-            console.log(err);
+            // console.log(err);
             toast(err.message);
             setUser(user);
           });
@@ -67,7 +67,7 @@ const Rgister = () => {
           toast("Your Email is Already in used");
         }
         // toast(err.code);
-        console.log(err);
+        // console.log(err);
       });
   };
   return (
@@ -113,9 +113,9 @@ const Rgister = () => {
                 />
                 <button type="button" onClick={() => setOpen(!open)}>
                   {open ? (
-                    <CiUnread className=" absolute right-8 top-4" />
-                  ) : (
                     <CiRead className=" absolute right-8 top-4" />
+                  ) : (
+                    <CiUnread className=" absolute right-8 top-4" />
                   )}
                 </button>
               </div>

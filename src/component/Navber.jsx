@@ -4,13 +4,13 @@ import { AuthContex } from "../Provider/AuthContex";
 
 const Navber = () => {
   const { loding, user, singOut, setLoding } = use(AuthContex);
-  console.log(user);
+  // console.log(user);
 
   const sineouthandalar = () => {
     setLoding(true);
     singOut();
   };
-  console.log(loding);
+  // console.log(loding);
   const links = (
     <>
       <li>
@@ -53,19 +53,24 @@ const Navber = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className=" btn-ghost font-bold text-xl">Tree Gallery</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
           {user ? (
-            <button onClick={sineouthandalar} className="btn">
+            <button
+              onClick={sineouthandalar}
+              className="btn bg-green-400 hover:bg-green-500"
+            >
               log out
             </button>
           ) : (
             <NavLink to={"/login"}>
-              <button className="btn">Login</button>
+              <button className="btn bg-green-400 hover:bg-green-500">
+                Login
+              </button>
             </NavLink>
           )}
         </div>

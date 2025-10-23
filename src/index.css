@@ -9,3 +9,8 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+.active {
+  text-decoration: underline;
+  font-style: italic;
+  font-size: medium;
+}

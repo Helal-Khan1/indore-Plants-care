@@ -10,6 +10,9 @@ import "swiper/css/navigation";
 const Sloder = () => {
   return (
     <div className="w-full p-2 container mx-auto bg-green-300 h-[400px] mt-20 mb-5 relative overflow-hidden">
+      <h1 className="text-center  bebas-regular font-bold text-6xl text-black/60 mb-5">
+        Plant trees, save the environment.
+      </h1>
       <Swiper
         modules={[Navigation, Autoplay]}
         spaceBetween={0}

@@ -6,7 +6,7 @@ import Loeding from "../component/Loeding";
 const RrivetRouter = ({ children }) => {
   const { user, loding } = use(AuthContex);
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   if (loding) {
     return <Loeding></Loeding>;
   }

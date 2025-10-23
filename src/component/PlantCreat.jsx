@@ -1,5 +1,10 @@
 import React from "react";
 
+import { motion } from "framer-motion"; // ✅ এই লাইনটি যোগ করো
+
+
+      
+
 const PlantCreat = () => {
   return (
     <div className="mt-28  container mx-auto">
@@ -8,15 +13,103 @@ const PlantCreat = () => {
       </h1>
 
       <div className="mt-20 flex justify-center gap-5 ">
-        <div>
-          <img src="https://i.ibb.co.com/3m0SjyGS/images4.jpg" alt="" />
+        <div className="space-y-20">
+          <motion.img
+            src="https://i.ibb.co.com/3m0SjyGS/images4.jpg"
+            alt=""
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          />
+          <motion.img
+            src="https://i.ibb.co.com/jvZJy9ZT/Aloe-Vare3.jpg"
+            className="h-60 mx-auto mt-5"
+            alt=""
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          />
+          <motion.img
+            src="https://i.ibb.co.com/9xZ80pC/view-palm-tree-species-with-green-foliage.jpg"
+            className="h-60 mx-auto mt-5"
+            alt=""
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          />
+          <motion.img
+            src="https://i.ibb.co.com/BVGSxJMS/zz-plant5.webp"
+            className="h-60 mx-auto mt-5"
+            alt=""
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          />
         </div>
         <div className="border-2"></div>
-        <div className="w-[300px]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-          ducimus placeat ex saepe in voluptates aliquam magnam mollitia. Quia
-          beatae cupiditate voluptas ipsam aspernatur et sequi eveniet, tenetur
-          quos aperiam?
+        <div className="w-[300px]  space-y-2.5 pl-5 ">
+          <h1 className=" text-2xl font-bold">
+            How to Water Indoor or House Plants
+          </h1>
+          <li>
+            {" "}
+            <span className="font-bold ">Check the soil:</span>
+            Stick your finger 1–2 inches into the soil. Water the plant if the
+            soil feels dry. If the soil is still moist, do not water.
+            Overwatering can cause root rot.
+          </li>
+          <li>
+            {" "}
+            <span className="font-bold ">Amount of water:</span>
+            Water in a way that the soil gets soaked but water drains out from
+            the holes at the bottom of the pot. Make sure excess water does not
+            accumulate at the bottom of the pot after watering.
+          </li>
+          <li>
+            {" "}
+            <span className="font-bold ">Time to water:</span>
+            Morning is the best time to water because the plant can absorb water
+            through its roots during the day. Avoid watering too much in the
+            afternoon or at night, as cold nighttime conditions can cause root
+            rot.
+          </li>
+          <p></p>
+          <h1 className="text-2xl font-bold">
+            Sunlight Tips for Indoor Plants and Fertilizing Tips{" "}
+          </h1>
+          <li>
+            <span className="font-bold ">
+              Understand the plant’s light needs:
+            </span>
+            Low-light plants: Snake plant, ZZ plant, Pothos → indirect light or
+            shade. Medium-light plants: Peace lily, Spider plant → bright,
+            indirect light. High-light plants: Succulents, Fiddle leaf fig →
+            direct sunlight or very bright indirect light.
+          </li>
+          <li>
+            <span className="font-bold ">Placement:</span>
+            Place near windows for natural light. East- or west-facing windows
+            are ideal for most plants. Avoid harsh midday sun for delicate
+            leaves; it can burn them.
+          </li>
+          <li>
+            <span className="font-bold ">Use the right fertilizer</span>
+            Balanced, water-soluble fertilizer (e.g., NPK 10:10:10) works well
+            for most indoor plants. Some plants like succulents need specialized
+            low-nitrogen fertilizer.
+          </li>
+          <li>
+            <span className="font-bold ">Frequency:</span>
+            During the growing season (spring and summer): Fertilize every 4–6
+            weeks. Dormant season (fall and winter): Reduce or stop fertilizing
+            because the plant grows slowly.
+          </li>
+          <li>
+            <span className="font-bold ">Application:</span>
+            Dilute fertilizer to half the recommended strength to avoid root
+            burn. Water the plant before fertilizing to prevent fertilizer from
+            damaging roots.
+          </li>
         </div>
       </div>
 
