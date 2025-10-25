@@ -18,7 +18,6 @@ const UpdeteProfile = () => {
         setUser({ ...auth.currentUser, displayName: name, photoURL: photo });
         toast("Profile updated successfully!");
         navigate("/profile");
-        return auth.currentUser.reload();
       })
       .then(() => {
         setUser(auth.currentUser);

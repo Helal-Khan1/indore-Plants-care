@@ -45,7 +45,7 @@ const Rgister = () => {
       // toast("");
     }
     // console.log({ emial, password, name, photo });
-    // event.target.reset();
+    event.target.reset();
     createUser(emial, password)
       .then((result) => {
         const user = result.user;

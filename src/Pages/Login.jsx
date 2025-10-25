@@ -8,7 +8,7 @@ import { CiRead, CiUnread } from "react-icons/ci";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-  const { singIn, user, SingWithGoogle } = use(AuthContex);
+  const { singIn, SingWithGoogle } = use(AuthContex);
   const [open, setOpen] = useState(false);
   const emailRef = useRef();
 
@@ -40,6 +40,7 @@ const Login = () => {
       .catch((err) => {
         toast(err.message);
       });
+    window.open("https://mail.google.com");
   };
   const submiteHandaler = (event) => {
     event.preventDefault();
@@ -89,16 +90,16 @@ const Login = () => {
               <div className=" relative">
                 <input
                   name="password"
-                  type={open ? "password" : "text"}
+                  type={open ? "text" : "password"}
                   required
                   className="input bg-green-300"
                   placeholder="Password"
                 />
                 <button type="button" onClick={() => setOpen(!open)}>
                   {open ? (
-                    <CiUnread className=" absolute right-8 top-4" />
-                  ) : (
                     <CiRead className=" absolute right-8 top-4" />
+                  ) : (
+                    <CiUnread className=" absolute right-8 top-4" />
                   )}
                 </button>
               </div>
