@@ -2,9 +2,6 @@ import React from "react";
 
 import { motion } from "framer-motion"; // ✅ এই লাইনটি যোগ করো
 
-
-      
-
 const PlantCreat = () => {
   return (
     <div className="mt-28  container mx-auto">
@@ -39,6 +36,14 @@ const PlantCreat = () => {
           />
           <motion.img
             src="https://i.ibb.co.com/BVGSxJMS/zz-plant5.webp"
+            className="h-60 mx-auto mt-5"
+            alt=""
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          />
+          <motion.img
+            src="https://i.ibb.co.com/ds26gp2w/images.webp"
             className="h-60 mx-auto mt-5"
             alt=""
             initial={{ opacity: 0, y: 50 }}

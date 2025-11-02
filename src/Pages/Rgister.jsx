@@ -34,8 +34,7 @@ const Rgister = () => {
       toast("name mast be 4 carackter");
       return;
     }
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
     if (!passwordRegex.test(password)) {
       toast(`Password must contain at least one special character `);
